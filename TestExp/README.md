@@ -43,3 +43,4 @@ cf push TestExp
 * Use swagger to manage all of rest api. Swagger middleware can validate entity. (Api.yml)
 * Use async/await
 * Use PostgreSQL and 'pg'
+* Will try to use 'Sequelize' to refine the database accessing feature
