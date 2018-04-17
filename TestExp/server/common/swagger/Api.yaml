@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: TestExp
+  description: This is for testing generator of express
+basePath: /api/v1
+tags:
+  - name: Examples
+    description: Simple example endpoints
+  - name: Specification
+    description: The swagger API specification
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+definitions:
+  ExampleBody:
+    type: object
+    title: example
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        description: The example name
+      code:
+        type: integer
+        description: The example code
+
+paths:
+  /examples:
+    get:
+      tags:
+        - Examples
+      description: Fetch all examples
+      responses:
+        200:
+          description: Returns all examples
+    post:
+      tags:
+        - Examples
+      description: Create a new example
+      parameters:
+        - name: example
+          in: body
+          description: number of items to skip
+          required: true
+          schema: 
+            $ref: "#/definitions/ExampleBody"
+      responses:
+        200:
+          description: Returns all examples
+
+  /examples/{id}:
+    get:
+      tags:
+        - Examples
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the entity to retrieve
+          type: string
+      responses:
+        200:
+          description: Return the example with the specified id
+        404:
+          description: Example not
+
+    put:
+      tags:
+        - Examples
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the entity to update
+          type: string
+        - name: example
+          in: body
+          required: true
+          description: The instance of example entity
+          schema:
+            $ref: "#/definitions/ExampleBody"
+      responses:
+        200:
+          description: Success to update
+        404:
+          description: Example not found
+
+    delete:
+      tags:
+        - Examples
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the entity to delete
+          type: string
+      responses:
+        204:
+          description: Success to delete
+        404:
+          description: Example not found
+  /health:
+    get:
+      tags:
+        - Examples
+    responses:
+      200:
+        description: Return Health check state
+      404:
+        description: Unhealthy
+
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
