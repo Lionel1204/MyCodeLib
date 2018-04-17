@@ -1,6 +1,6 @@
 # TestExp
 
-This is for testing generator of express
+This is a framework of a back-end restful api server
 
 ## Install It
 ```
@@ -38,3 +38,8 @@ cf push TestExp
 * Point you're browser to [http://localhost:3000](http://localhost:3000)
 * Invoke the example REST endpoint `curl http://localhost:3000/api/v1/examples`
    
+### Notes:
+* Node.js + express + swagger + pg + backpack
+* Use swagger to manage all of rest api. Swagger middleware can validate entity. (Api.yml)
+* Use async/await
+* Use PostgreSQL and 'pg'
