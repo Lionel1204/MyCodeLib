@@ -44,3 +44,6 @@ cf push TestExp
 * Use async/await
 * Use PostgreSQL and 'pg'
 * Will try to use 'Sequelize' to refine the database accessing feature
+
+### Next step:
+> Will use knexjs (http://knexjs.org) to build SQL statement if needed. 
